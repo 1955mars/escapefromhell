@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public string playerName;
     public Tile currentTile;
+    private bool isPossessed;
 
     //public int steps = 5;
     // Start is called before the first frame update
@@ -22,7 +23,17 @@ public class Player : MonoBehaviour
 
     public void Move(int steps)
     {
-        currentTile.Move(gameObject, steps);
+        if (!isPossessed)
+        {
+            currentTile.Move(gameObject, steps);
+        }
+        else
+        {
+            if(steps != 6)
+            {
+                currentTile.Move(gameObject, steps);
+            }
+        }
     }
 
     public void UpdateCurrentTile(Tile tile)

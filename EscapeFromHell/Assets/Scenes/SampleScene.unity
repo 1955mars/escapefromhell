@@ -213,6 +213,11 @@ PrefabInstance:
       propertyPath: isRotatable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1126215982}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!1001 &202913874
@@ -295,6 +300,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: northTile
+      value: 
+      objectReference: {fileID: 949173886}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 949173886}
     m_RemovedComponents: []
@@ -460,6 +470,11 @@ PrefabInstance:
       propertyPath: southTile
       value: 
       objectReference: {fileID: 1255002100}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1255002100}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!4 &348842440 stripped
@@ -562,6 +577,11 @@ PrefabInstance:
       propertyPath: southTile
       value: 
       objectReference: {fileID: 878444672}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 878444672}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!4 &407257867 stripped
@@ -659,6 +679,11 @@ PrefabInstance:
       propertyPath: index
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1757264199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!1001 &541305802
@@ -743,6 +768,11 @@ PrefabInstance:
       propertyPath: northTile
       value: 
       objectReference: {fileID: 1838448945}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1838448945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!1001 &578873977
@@ -814,6 +844,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
+      propertyPath: possibleDirections.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
       propertyPath: index
       value: 30
       objectReference: {fileID: 0}
@@ -837,6 +877,16 @@ PrefabInstance:
       propertyPath: westTile
       value: 
       objectReference: {fileID: 954903399}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 954903399}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 2064804110}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!1 &582349949
@@ -1018,6 +1068,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: southTile
+      value: 
+      objectReference: {fileID: 407257868}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 407257868}
     m_RemovedComponents: []
@@ -1214,6 +1269,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: westTile
+      value: 
+      objectReference: {fileID: 1336923992}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 1336923992}
     m_RemovedComponents: []
@@ -1421,6 +1481,11 @@ PrefabInstance:
       propertyPath: westTile
       value: 
       objectReference: {fileID: 1423785443}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1423785443}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!4 &878444671 stripped
@@ -1521,6 +1586,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: northTile
+      value: 
+      objectReference: {fileID: 1316544154}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 1316544154}
     m_RemovedComponents: []
@@ -1796,6 +1866,11 @@ PrefabInstance:
       propertyPath: isRotatable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1794237126}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!114 &1079885683 stripped
@@ -2020,6 +2095,11 @@ PrefabInstance:
       propertyPath: northTile
       value: 
       objectReference: {fileID: 1336923992}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1336923992}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!1001 &1160576838
@@ -2102,6 +2182,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: eastTile
+      value: 
+      objectReference: {fileID: 1838448945}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 1838448945}
     m_RemovedComponents: []
@@ -2327,6 +2412,11 @@ PrefabInstance:
       propertyPath: eastTile
       value: 
       objectReference: {fileID: 1787147941}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1787147941}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!4 &1316544153 stripped
@@ -2460,6 +2550,11 @@ PrefabInstance:
       propertyPath: northTile
       value: 
       objectReference: {fileID: 856013700}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 856013700}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!114 &1414398824 stripped
@@ -2562,6 +2657,11 @@ PrefabInstance:
       propertyPath: eastTile
       value: 
       objectReference: {fileID: 1613325328}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1613325328}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!114 &1423785443 stripped
@@ -2651,6 +2751,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
+      propertyPath: possibleDirections.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
       propertyPath: index
       value: 15
       objectReference: {fileID: 0}
@@ -2667,6 +2777,21 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: westTile
+      value: 
+      objectReference: {fileID: 2143039679}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 2143039679}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 858539622}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[1]
       value: 
       objectReference: {fileID: 2143039679}
     m_RemovedComponents: []
@@ -2751,6 +2876,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: northTile
+      value: 
+      objectReference: {fileID: 1868043543}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 1868043543}
     m_RemovedComponents: []
@@ -2860,6 +2990,11 @@ PrefabInstance:
       propertyPath: isRotatable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1798956202}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!1001 &1523667484
@@ -3039,6 +3174,11 @@ PrefabInstance:
       propertyPath: southTile
       value: 
       objectReference: {fileID: 2022041699}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 2022041699}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!1001 &1545719012
@@ -3110,6 +3250,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
+      propertyPath: possibleTiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleDirections.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
       propertyPath: index
       value: 16
       objectReference: {fileID: 0}
@@ -3131,6 +3281,21 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: eastTile
+      value: 
+      objectReference: {fileID: 1948245447}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1172895069}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1172895069}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[1]
       value: 
       objectReference: {fileID: 1948245447}
     m_RemovedComponents: []
@@ -3215,6 +3380,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: southTile
+      value: 
+      objectReference: {fileID: 1211441564}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 1211441564}
     m_RemovedComponents: []
@@ -3317,6 +3487,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: eastTile
+      value: 
+      objectReference: {fileID: 1079885683}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 1079885683}
     m_RemovedComponents: []
@@ -3426,6 +3601,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
+      propertyPath: possibleDirections.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
       propertyPath: index
       value: 22
       objectReference: {fileID: 0}
@@ -3449,6 +3634,21 @@ PrefabInstance:
       propertyPath: isRotatable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1319034521}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1654712787}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1319034521}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!1001 &1717117535
@@ -3533,6 +3733,11 @@ PrefabInstance:
       propertyPath: southTile
       value: 
       objectReference: {fileID: 1500539006}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1500539006}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!1001 &1718133639
@@ -3615,6 +3820,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: southTile
+      value: 
+      objectReference: {fileID: 606799121}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 606799121}
     m_RemovedComponents: []
@@ -3712,6 +3922,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: northTile
+      value: 
+      objectReference: {fileID: 1079885683}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 1079885683}
     m_RemovedComponents: []
@@ -3960,6 +4175,11 @@ PrefabInstance:
       propertyPath: westTile
       value: 
       objectReference: {fileID: 1414398824}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1414398824}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!114 &1843062020 stripped
@@ -4067,6 +4287,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
+      propertyPath: possibleDirections.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
       propertyPath: index
       value: 5
       objectReference: {fileID: 0}
@@ -4090,6 +4320,21 @@ PrefabInstance:
       propertyPath: isRotatable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1718133641}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1718133641}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 348842444}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!4 &1877400515 stripped
@@ -4196,6 +4441,11 @@ PrefabInstance:
     - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: southTile
+      value: 
+      objectReference: {fileID: 2114945047}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
       value: 
       objectReference: {fileID: 2114945047}
     m_RemovedComponents: []
@@ -4318,6 +4568,11 @@ PrefabInstance:
       propertyPath: direction
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1423785443}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!114 &2114945047 stripped
@@ -4420,6 +4675,11 @@ PrefabInstance:
       propertyPath: southTile
       value: 
       objectReference: {fileID: 1843062020}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1843062020}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!4 &2143039678 stripped
@@ -4517,6 +4777,16 @@ PrefabInstance:
       propertyPath: index
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: isRotatable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: nextTile
+      value: 
+      objectReference: {fileID: 1126215982}
     - target: {fileID: 724109452217056859, guid: 2f42263fd4c617745b93bb50a02127f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
