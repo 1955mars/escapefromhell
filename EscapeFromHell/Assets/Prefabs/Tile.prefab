@@ -104,9 +104,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55dc076a16e5fd4d83c38d7ccccd4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players: []
+  index: 0
   northTile: {fileID: 0}
   southTile: {fileID: 0}
   eastTile: {fileID: 0}
   westTile: {fileID: 0}
-  direction: 0
+  currentDirection: 0
+  possibleDirections: 
+  possibleTiles: []
   isRotatable: 0
+  nextTile: {fileID: 0}

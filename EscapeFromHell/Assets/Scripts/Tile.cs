@@ -6,13 +6,14 @@ public enum Direction { North, South, East, West };
 
 public class Tile : MonoBehaviour
 {
+    public Player[] players;
     public int index;
 
     public Tile northTile;
     public Tile southTile;
     public Tile eastTile;
     public Tile westTile;
-
+    public bool endTile = false;
     public Direction currentDirection;
     public Direction[] possibleDirections;
     public Tile[] possibleTiles;
@@ -26,7 +27,7 @@ public class Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        players = GameObject.FindObjectsOfType<Player>();
     }
 
     // Update is called once per frame
@@ -38,11 +39,40 @@ public class Tile : MonoBehaviour
     public void Move(GameObject gO, int steps)
     {
         Debug.Log("Index : " + index);
+        if (endTile)
+        {
+            return;
+        }
+
         if(steps > 0)
         {
             player = gO;
-            playerSteps = steps;
+            //playerSteps = steps;
             Vector3 nextPos = Vector3.zero;
+
+            Tile next;
+
+            if (player.GetComponent<Player>().isPossessed)
+            {
+                foreach(Player otherPlayer in players)
+                {
+                    if (otherPlayer.currentTile.Equals(this))
+                    {
+                        otherPlayer.Possess();
+                    }
+                }
+            }
+
+            if (!player.GetComponent<Player>().isPossessed)
+            {
+                foreach (Player otherPlayer in players)
+                {
+                    if (otherPlayer.currentTile.Equals(this))
+                    {
+                        otherPlayer.UnPossess();
+                    }
+                }
+            }
 
             //switch (currentDirection)
             //{
@@ -70,6 +100,10 @@ public class Tile : MonoBehaviour
             iTween.MoveTo(player, iTween.Hash("position", nextPos, "time", 2, "easetype", iTween.EaseType.linear, "onComplete", "OnCompleteMove",
     "onCompleteTarget", gameObject));
 
+            player.GetComponent<Player>().UpdateCurrentTile(nextTile);
+
+            next = nextTile;
+
             if (isRotatable)
             {
                 //Prompt player to rotate tile or not
@@ -78,7 +112,8 @@ public class Tile : MonoBehaviour
                 SwitchDirection();
             }
 
-            nextTile.Move(gO, steps - 1);
+            next.Move(gO, steps - 1);
+
         }
     }
 
@@ -87,12 +122,12 @@ public class Tile : MonoBehaviour
     {
         //Debug.Log("On Complete Move");
 
-        if (playerSteps == 1)
-        {
-            player.GetComponent<Player>().UpdateCurrentTile(nextTile);
-            return;
-        }
-        nextTile.Move(player, playerSteps - 1);
+        //if (playerSteps == 1)
+        //{
+        //    player.GetComponent<Player>().UpdateCurrentTile(nextTile);
+        //    return;
+        //}
+        //nextTile.Move(player, playerSteps - 1);
     }
 
     void SwitchDirection()
