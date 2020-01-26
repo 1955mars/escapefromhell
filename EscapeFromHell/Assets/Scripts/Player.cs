@@ -29,6 +29,10 @@ public class Player : MonoBehaviour
             {
                 isPossessed = true;
             }
+            else
+            {
+
+            }
             currentTile.Move(gameObject, steps);
         }
         else
