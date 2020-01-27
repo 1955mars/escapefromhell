@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Direction { North, South, East, West };
 
@@ -23,6 +24,9 @@ public class Tile : MonoBehaviour
     private GameObject player;
     public Tile nextTile;
     private int playerSteps;
+    public GameObject RotatePromptUI;
+    public Button YesButton;
+    public Button NoButton;
 
     // Start is called before the first frame update
     void Start()
@@ -107,9 +111,12 @@ public class Tile : MonoBehaviour
             if (isRotatable)
             {
                 //Prompt player to rotate tile or not
-
+                RotatePromptUI.GetComponent<RotatePrompt>().RotatePromptDisplay();
                 //If yes
-                SwitchDirection();
+                YesButton.onClick.AddListener(SwitchDirection);
+                //SwitchDirection();
+                //If no
+                NoButton.onClick.AddListener(RotatePromptUI.GetComponent<RotatePrompt>().CloseRotatePrompt);
             }
 
             next.Move(gO, steps - 1);
@@ -132,7 +139,8 @@ public class Tile : MonoBehaviour
 
     void SwitchDirection()
     {
-        if (isRotatable) {
+        if (isRotatable)
+        {
             if (possibleDirections[0].Equals(currentDirection))
             {
                 currentDirection = possibleDirections[1];
@@ -149,6 +157,9 @@ public class Tile : MonoBehaviour
             {
                 nextTile = possibleTiles[0];
             }
-        }
+
+            // Close Prompt after pressing Yes
+            RotatePromptUI.GetComponent<RotatePrompt>().CloseRotatePrompt();
+        }        
     }
 }
