@@ -56,7 +56,7 @@ public class Tile : MonoBehaviour
             nextPos = nextTile.transform.position;
             nextPos.y = player.transform.position.y;
             
-            iTween.MoveTo(player, iTween.Hash("position", nextPos, "time", 2, "easetype", iTween.EaseType.linear, "onComplete", "OnCompleteMove",
+            iTween.MoveTo(player, iTween.Hash("position", nextPos, "time", 1, "easetype", iTween.EaseType.linear, "onComplete", "OnCompleteMove",
     "onCompleteTarget", gameObject));
 
         }
