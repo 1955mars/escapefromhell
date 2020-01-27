@@ -39,80 +39,25 @@ public class Tile : MonoBehaviour
     public void Move(GameObject gO, int steps)
     {
         Debug.Log("Index : " + index);
+        player = gO;
+        playerSteps = steps;
+
         if (endTile)
         {
+            player.GetComponent<Player>().UnPossess();
+            GameObject.FindObjectOfType<Dice>().MoveDone();
             return;
         }
 
         if(steps > 0)
         {
-            player = gO;
-            //playerSteps = steps;
             Vector3 nextPos = Vector3.zero;
 
-            Tile next;
-
-            if (player.GetComponent<Player>().isPossessed)
-            {
-                foreach(Player otherPlayer in players)
-                {
-                    if (otherPlayer.currentTile.Equals(this))
-                    {
-                        otherPlayer.Possess();
-                    }
-                }
-            }
-
-            if (!player.GetComponent<Player>().isPossessed)
-            {
-                foreach (Player otherPlayer in players)
-                {
-                    if (otherPlayer.currentTile.Equals(this))
-                    {
-                        otherPlayer.UnPossess();
-                    }
-                }
-            }
-
-            //switch (currentDirection)
-            //{
-            //    case Direction.East:
-            //        nextTile = eastTile;
-            //        break;
-            //    case Direction.North:
-            //        nextTile = northTile;
-            //        break;
-            //    case Direction.South:
-            //        nextTile = southTile;
-            //        break;
-            //    case Direction.West:
-            //        nextTile = westTile;
-            //        break;
-            //    default:
-            //        nextTile = northTile;
-            //        Debug.LogError("Unknown direction");
-            //        break;
-            //}
-
             nextPos = nextTile.transform.position;
-            nextPos.y = gO.transform.position.y;
+            nextPos.y = player.transform.position.y;
             
             iTween.MoveTo(player, iTween.Hash("position", nextPos, "time", 2, "easetype", iTween.EaseType.linear, "onComplete", "OnCompleteMove",
     "onCompleteTarget", gameObject));
-
-            player.GetComponent<Player>().UpdateCurrentTile(nextTile);
-
-            next = nextTile;
-
-            if (isRotatable)
-            {
-                //Prompt player to rotate tile or not
-
-                //If yes
-                SwitchDirection();
-            }
-
-            next.Move(gO, steps - 1);
 
         }
     }
@@ -120,17 +65,53 @@ public class Tile : MonoBehaviour
 
     void OnCompleteMove()
     {
-        //Debug.Log("On Complete Move");
+        Debug.Log("On Complete Move");
 
-        //if (playerSteps == 1)
-        //{
-        //    player.GetComponent<Player>().UpdateCurrentTile(nextTile);
-        //    return;
-        //}
-        //nextTile.Move(player, playerSteps - 1);
+
+        if (player.GetComponent<Player>().isPossessed)
+        {
+            foreach (Player otherPlayer in players)
+            {
+                if (otherPlayer.currentTile.Equals(nextTile))
+                {
+                    otherPlayer.Possess();
+                }
+            }
+        }
+
+        if (!player.GetComponent<Player>().isPossessed)
+        {
+            foreach (Player otherPlayer in players)
+            {
+                if (otherPlayer.currentTile.Equals(nextTile))
+                {
+                    otherPlayer.UnPossess();
+                }
+            }
+        }
+
+        player.GetComponent<Player>().UpdateCurrentTile(nextTile);
+
+        if (isRotatable)
+        {
+            GameObject.FindObjectOfType<Dice>().CrossedRotatable(this);
+            //Prompt player to rotate tile or not
+
+            //If yes
+            //SwitchDirection();
+        }
+
+        if (playerSteps == 1)
+        {
+            GameObject.FindObjectOfType<Dice>().MoveDone();
+            return;
+        }
+
+        nextTile.Move(player, playerSteps - 1);
+
     }
 
-    void SwitchDirection()
+    public void SwitchDirection()
     {
         if (isRotatable) {
             if (possibleDirections[0].Equals(currentDirection))

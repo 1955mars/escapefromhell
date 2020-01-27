@@ -1995,6 +1995,7 @@ MonoBehaviour:
   - {fileID: 1243842367}
   - {fileID: 1523667485}
   text: {fileID: 228557028}
+  crossedRotatableTile: {fileID: 0}
 --- !u!114 &1126215982 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
@@ -4335,6 +4336,11 @@ PrefabInstance:
       propertyPath: possibleTiles.Array.data[1]
       value: 
       objectReference: {fileID: 348842444}
+    - target: {fileID: 724109452217056852, guid: 2f42263fd4c617745b93bb50a02127f1,
+        type: 3}
+      propertyPath: possibleDirections.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
 --- !u!4 &1877400515 stripped
