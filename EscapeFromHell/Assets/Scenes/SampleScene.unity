@@ -1112,6 +1112,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644278, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8423056870920644274, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1171,7 +1176,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fa0cf174d13b9ec4abea8b50eaea3579, type: 2}
+      objectReference: {fileID: 2100000, guid: fe1a52077c2d2314183da426e9acd227, type: 2}
     - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
         type: 3}
       propertyPath: currentTile
@@ -1181,6 +1186,21 @@ PrefabInstance:
         type: 3}
       propertyPath: steps
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: possess
+      value: 
+      objectReference: {fileID: 2100000, guid: fe1a52077c2d2314183da426e9acd227, type: 2}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: unpossess
+      value: 
+      objectReference: {fileID: 2100000, guid: fa0cf174d13b9ec4abea8b50eaea3579, type: 2}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: isPossessed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38, type: 3}
@@ -3014,6 +3034,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644278, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8423056870920644274, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3084,6 +3109,16 @@ PrefabInstance:
       propertyPath: steps
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: possess
+      value: 
+      objectReference: {fileID: 2100000, guid: 053466268baae1b4b8b6de6a587bac7c, type: 2}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: unpossess
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d7641af23c4eb44286391d3e6e169d4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38, type: 3}
 --- !u!1 &1523667485 stripped
@@ -4806,6 +4841,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644278, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8423056870920644274, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4875,6 +4915,21 @@ PrefabInstance:
         type: 3}
       propertyPath: steps
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: unpossess
+      value: 
+      objectReference: {fileID: 2100000, guid: a86d3105ed5a44547a24c5dd36b14a3e, type: 2}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: possess
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e102475003cb9747b0dd73089e97d54, type: 2}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: isPossessed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38, type: 3}

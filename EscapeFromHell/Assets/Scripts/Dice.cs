@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Dice : MonoBehaviour
 {
     public GameObject[] players;
+    //public InitDemon DemonSelector;
     public Text text;
     int playerIndex;
     // Start is called before the first frame update
@@ -31,6 +32,15 @@ public class Dice : MonoBehaviour
     void RollDice()
     {
         int roll = Random.Range(1, 7);
+        //if(!DemonSelector.StartGame && DemonSelector.DemCount <1)
+        //{
+        //    if (roll == 1)
+        //    {
+        //        DemonSelector.StartGame = true;
+        //        DemonSelector.DemCount++;
+        //        return;
+        //    }
+        //}
         players[playerIndex].GetComponent<Player>().Move(roll);
         text.text = roll.ToString();
     }
