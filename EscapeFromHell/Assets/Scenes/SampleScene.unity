@@ -1202,6 +1202,16 @@ PrefabInstance:
       propertyPath: isPossessed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: unpossessMesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: possessMesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38, type: 3}
 --- !u!1001 &647462653
@@ -2014,6 +2024,7 @@ MonoBehaviour:
   - {fileID: 26581346}
   - {fileID: 1243842367}
   - {fileID: 1523667485}
+  DemonSelector: {fileID: 0}
   text: {fileID: 228557028}
 --- !u!114 &1126215982 stripped
 MonoBehaviour:
@@ -3119,6 +3130,16 @@ PrefabInstance:
       propertyPath: unpossess
       value: 
       objectReference: {fileID: 2100000, guid: 2d7641af23c4eb44286391d3e6e169d4, type: 2}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: unpossessMesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: possessMesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38, type: 3}
 --- !u!1 &1523667485 stripped
@@ -3216,6 +3237,36 @@ PrefabInstance:
       objectReference: {fileID: 2022041699}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f42263fd4c617745b93bb50a02127f1, type: 3}
+--- !u!1 &1537963984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537963985}
+  m_Layer: 0
+  m_Name: InitialDemonSelector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1537963985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537963984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2179008, y: 1.7964412, z: 19.93736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1545719012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4931,5 +4982,15 @@ PrefabInstance:
       propertyPath: isPossessed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: unpossessMesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: possessMesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38, type: 3}
