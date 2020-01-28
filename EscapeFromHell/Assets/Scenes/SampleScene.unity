@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 5d229b326d78e9640ab5d3d2c6b0e866, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 54573a2726f4ab34fa11600279e8fca9, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.62343705, g: 0.24086836, b: 0.05335843, a: 1}
+  m_IndirectSpecularColor: {r: 0.73042643, g: 0.18404675, b: 0.0026074443, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1455,6 +1455,16 @@ PrefabInstance:
       propertyPath: steps
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: unPossessMesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: possessMesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38, type: 3}
 --- !u!1001 &647462653
@@ -2818,7 +2828,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1195488516}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -3488,7 +3498,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1393190657}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -4124,6 +4134,16 @@ PrefabInstance:
       propertyPath: steps
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: unPossessMesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: possessMesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38, type: 3}
 --- !u!1 &1523667485 stripped
@@ -6432,5 +6452,15 @@ PrefabInstance:
       propertyPath: steps
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: unPossessMesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8423056870920644275, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38,
+        type: 3}
+      propertyPath: possessMesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3569ceb0e55fa47b8c80f4f1f28a38, type: 3}
