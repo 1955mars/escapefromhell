@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
 
     public void Possess()
     {
+        isEveryOneUnpossessed = false;
         GameObject.FindObjectOfType<Dice>().playerPossessed();
         isPossessed = true;
         playerMesh.mesh = possessMesh;
@@ -87,6 +88,11 @@ public class Player : MonoBehaviour
     public void UnPossess()
     {
         GameObject.FindObjectOfType<Dice>().playerUnPossessed();
+        if (GameObject.FindObjectOfType<Dice>().everyoneUnpossessed())
+        {
+            isEveryOneUnpossessed = true;
+            skipNextRoll = true;
+        }
         isPossessed = false;
         playerMesh.mesh = unPossessMesh;
     }

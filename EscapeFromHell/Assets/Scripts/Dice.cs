@@ -7,7 +7,10 @@ public class Dice : MonoBehaviour
 {
     public GameObject[] players;
     public Text text;
+    public Text playerNumberText;
     int playerIndex;
+
+    private bool gameOver = false;
 
     List<int> donePlayerIndices = new List<int>();
     List<int> possessedPlayerIndices = new List<int>();
@@ -55,6 +58,14 @@ public class Dice : MonoBehaviour
                 playerIndex++;
                 return;
             }
+            if (playerIndex == 2)
+            {
+                playerNumberText.text = "Player 1\'s turn";
+            }
+            else
+            {
+                playerNumberText.text = "Player " + (playerIndex + 2) + "\'s turn";
+            }
             RollDice();
             isInProgress = true;
         }
@@ -63,8 +74,11 @@ public class Dice : MonoBehaviour
     void RollDice()
     {
         int roll = Random.Range(1, 7);
+
         if (players[playerIndex].GetComponent<Player>().Move(roll))
+        {
             text.text = roll.ToString();
+        }
         else
             text.text = "S";
     }
@@ -95,6 +109,11 @@ public class Dice : MonoBehaviour
         }
     }
 
+    public bool everyoneUnpossessed()
+    {
+        return (possessedPlayerIndices.Count == 0);
+    }
+
     public void playerUnPossessed()
     {
         possessedPlayerIndices.Remove(playerIndex);
@@ -116,11 +135,16 @@ public class Dice : MonoBehaviour
             YesButton.onClick.AddListener(RotatePromptUI.GetComponent<RotatePrompt>().CloseRotatePrompt);
             NoButton.onClick.AddListener(RotatePromptUI.GetComponent<RotatePrompt>().CloseRotatePrompt);
             NoButton.onClick.AddListener(UserTakenAction);
+            if (gameOver)
+            {
+                RotatePromptUI.GetComponent<RotatePrompt>().CloseRotatePrompt();
+            }
         }
     }
 
     public void ShowGGPromptLose()
     {
+        gameOver = true;
         CloseRotatePrompt();
         GGText.text = "LOSE!";
         GGPromptUI.GetComponent<GGPrompt>().GGPromptDisplay();
@@ -135,6 +159,7 @@ public class Dice : MonoBehaviour
 
     public void ShowGGPromptWin()
     {
+        gameOver = true;
         CloseRotatePrompt();
         GGText.text = "WIN!";
         GGPromptUI.GetComponent<GGPrompt>().GGPromptDisplay();
