@@ -78,6 +78,7 @@ public class Player : MonoBehaviour
 
     public void UnPossess()
     {
+        GameObject.FindObjectOfType<Dice>().playerUnPossessed();
         isPossessed = false;
     }
 

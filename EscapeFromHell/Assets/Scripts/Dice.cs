@@ -95,6 +95,11 @@ public class Dice : MonoBehaviour
         }
     }
 
+    public void playerUnPossessed()
+    {
+        possessedPlayerIndices.Remove(playerIndex);
+    }
+
     public void CrossedRotatable(Tile tile)
     {
         hasCrossedRotatable = true;
@@ -116,14 +121,21 @@ public class Dice : MonoBehaviour
 
     public void ShowGGPromptLose()
     {
+        CloseRotatePrompt();
         GGText.text = "LOSE!";
         GGPromptUI.GetComponent<GGPrompt>().GGPromptDisplay();
         isShowingPrompt = true;
         ExitButton.onClick.AddListener(QuitGame);
     }
 
+    private void CloseRotatePrompt()
+    {
+        RotatePromptUI.GetComponent<RotatePrompt>().CloseRotatePrompt();
+    }
+
     public void ShowGGPromptWin()
     {
+        CloseRotatePrompt();
         GGText.text = "WIN!";
         GGPromptUI.GetComponent<GGPrompt>().GGPromptDisplay();
         isShowingPrompt = true;
