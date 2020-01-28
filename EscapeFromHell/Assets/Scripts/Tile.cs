@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum Direction { North, South, East, West };
 
@@ -15,6 +14,7 @@ public class Tile : MonoBehaviour
     public Tile eastTile;
     public Tile westTile;
     public bool endTile = false;
+    Direction prevDirection;
     public Direction currentDirection;
     public Direction[] possibleDirections;
     public Tile[] possibleTiles;
@@ -24,9 +24,6 @@ public class Tile : MonoBehaviour
     private GameObject player;
     public Tile nextTile;
     private int playerSteps;
-    public GameObject RotatePromptUI;
-    public Button YesButton;
-    public Button NoButton;
 
     // Start is called before the first frame update
     void Start()
@@ -37,89 +34,31 @@ public class Tile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Move(GameObject gO, int steps)
     {
         Debug.Log("Index : " + index);
+        player = gO;
+        playerSteps = steps;
+
         if (endTile)
         {
+            player.GetComponent<Player>().UnPossess();
+            GameObject.FindObjectOfType<Dice>().MoveDone();
             return;
         }
 
-        if(steps > 0)
+        if (steps > 0)
         {
-            player = gO;
-            //playerSteps = steps;
             Vector3 nextPos = Vector3.zero;
 
-            Tile next;
-
-            if (player.GetComponent<Player>().isPossessed)
-            {
-                foreach(Player otherPlayer in players)
-                {
-                    if (otherPlayer.currentTile.Equals(this))
-                    {
-                        otherPlayer.Possess();
-                    }
-                }
-            }
-
-            if (!player.GetComponent<Player>().isPossessed)
-            {
-                foreach (Player otherPlayer in players)
-                {
-                    if (otherPlayer.currentTile.Equals(this))
-                    {
-                        otherPlayer.UnPossess();
-                    }
-                }
-            }
-
-            //switch (currentDirection)
-            //{
-            //    case Direction.East:
-            //        nextTile = eastTile;
-            //        break;
-            //    case Direction.North:
-            //        nextTile = northTile;
-            //        break;
-            //    case Direction.South:
-            //        nextTile = southTile;
-            //        break;
-            //    case Direction.West:
-            //        nextTile = westTile;
-            //        break;
-            //    default:
-            //        nextTile = northTile;
-            //        Debug.LogError("Unknown direction");
-            //        break;
-            //}
-
             nextPos = nextTile.transform.position;
-            nextPos.y = gO.transform.position.y;
-            
-            iTween.MoveTo(player, iTween.Hash("position", nextPos, "time", 2, "easetype", iTween.EaseType.linear, "onComplete", "OnCompleteMove",
+            nextPos.y = player.transform.position.y;
+
+            iTween.MoveTo(player, iTween.Hash("position", nextPos, "time", 1, "easetype", iTween.EaseType.linear, "onComplete", "OnCompleteMove",
     "onCompleteTarget", gameObject));
-
-            player.GetComponent<Player>().UpdateCurrentTile(nextTile);
-
-            next = nextTile;
-
-            if (isRotatable)
-            {
-                //Prompt player to rotate tile or not
-                RotatePromptUI.GetComponent<RotatePrompt>().RotatePromptDisplay();
-                //If yes
-                YesButton.onClick.AddListener(SwitchDirection);
-                //SwitchDirection();
-                //If no
-                NoButton.onClick.AddListener(RotatePromptUI.GetComponent<RotatePrompt>().CloseRotatePrompt);
-            }
-
-            next.Move(gO, steps - 1);
 
         }
     }
@@ -127,27 +66,67 @@ public class Tile : MonoBehaviour
 
     void OnCompleteMove()
     {
-        //Debug.Log("On Complete Move");
+        Debug.Log("On Complete Move");
 
-        //if (playerSteps == 1)
-        //{
-        //    player.GetComponent<Player>().UpdateCurrentTile(nextTile);
-        //    return;
-        //}
-        //nextTile.Move(player, playerSteps - 1);
+
+        if (player.GetComponent<Player>().isPossessed)
+        {
+            foreach (Player otherPlayer in players)
+            {
+                if (otherPlayer.currentTile.Equals(nextTile))
+                {
+                    otherPlayer.Possess();
+                }
+            }
+        }
+
+        if (!player.GetComponent<Player>().isPossessed)
+        {
+            foreach (Player otherPlayer in players)
+            {
+                if (otherPlayer.currentTile.Equals(nextTile))
+                {
+                    otherPlayer.UnPossess();
+                }
+            }
+        }
+
+        player.GetComponent<Player>().UpdateCurrentTile(nextTile);
+
+        if (isRotatable && !player.GetComponent<Player>().isPossessed)
+        {
+            GameObject.FindObjectOfType<Dice>().CrossedRotatable(this);
+            //Prompt player to rotate tile or not
+
+            //If yes
+            //SwitchDirection();
+        }
+
+        if (playerSteps == 1)
+        {
+            GameObject.FindObjectOfType<Dice>().MoveDone();
+            return;
+        }
+
+        nextTile.Move(player, playerSteps - 1);
+
     }
 
-    void SwitchDirection()
+    public void SwitchDirection()
     {
         if (isRotatable)
         {
             if (possibleDirections[0].Equals(currentDirection))
             {
+                prevDirection = currentDirection;
                 currentDirection = possibleDirections[1];
+                RotateTile();
             }
             else
             {
+                prevDirection = currentDirection;
                 currentDirection = possibleDirections[0];
+                RotateTile();
             }
             if (possibleTiles[0].Equals(nextTile))
             {
@@ -157,9 +136,32 @@ public class Tile : MonoBehaviour
             {
                 nextTile = possibleTiles[0];
             }
+        }
+    }
 
-            // Close Prompt after pressing Yes
-            RotatePromptUI.GetComponent<RotatePrompt>().CloseRotatePrompt();
-        }        
+    void RotateTile()
+    {
+        Debug.Log("Rotate Tile" + currentDirection);
+        Vector3 prevRot = GiveRotation(prevDirection);
+        Vector3 currRot = GiveRotation(currentDirection);
+        Debug.Log("Curr Rot" + currRot);
+        transform.rotation = Quaternion.Euler(currRot);
+    }
+
+    Vector3 GiveRotation(Direction dir)
+    {
+        switch(dir)
+        {
+            case (Direction.East):
+                return new Vector3(0, 90f, 0);
+            case (Direction.North):
+                return new Vector3(0, 0, 0);
+            case (Direction.South):
+                return new Vector3(0, 180f, 0);
+            case (Direction.West):
+                return new Vector3(0, -90f, 0);
+            default:
+                return new Vector3(0, 0, 0);
+        }
     }
 }
