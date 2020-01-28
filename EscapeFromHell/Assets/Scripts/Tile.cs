@@ -45,7 +45,11 @@ public class Tile : MonoBehaviour
 
         if (endTile)
         {
-            player.GetComponent<Player>().UnPossess();
+            if (player.GetComponent<Player>().isPossessed)
+            {
+                GameObject.FindObjectOfType<Dice>().ShowGGPromptLose();
+            }
+            GameObject.FindObjectOfType<Dice>().playerFinished();
             GameObject.FindObjectOfType<Dice>().MoveDone();
             return;
         }

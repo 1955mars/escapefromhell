@@ -10,12 +10,15 @@ public class Dice : MonoBehaviour
     int playerIndex;
 
     List<int> donePlayerIndices = new List<int>();
+    List<int> possessedPlayerIndices = new List<int>();
 
     bool isInProgress = false;
 
     private bool hasCrossedRotatable = false;
     public Tile crossedRotatableTile;
-
+    public GameObject GGPromptUI;
+    public Text GGText;
+    public Button ExitButton;
     public GameObject RotatePromptUI;
     public Button YesButton;
     public Button NoButton;
@@ -77,6 +80,19 @@ public class Dice : MonoBehaviour
     public void playerFinished()
     {
         donePlayerIndices.Add(playerIndex);
+        if(donePlayerIndices.Count == players.Length)
+        {
+            ShowGGPromptWin();
+        }
+    }
+
+    public void playerPossessed()
+    {
+        possessedPlayerIndices.Add(playerIndex);
+        if (possessedPlayerIndices.Count == players.Length)
+        {
+            ShowGGPromptLose();
+        }
     }
 
     public void CrossedRotatable(Tile tile)
@@ -98,6 +114,22 @@ public class Dice : MonoBehaviour
         }
     }
 
+    public void ShowGGPromptLose()
+    {
+        GGText.text = "LOSE!";
+        GGPromptUI.GetComponent<GGPrompt>().GGPromptDisplay();
+        isShowingPrompt = true;
+        ExitButton.onClick.AddListener(QuitGame);
+    }
+
+    public void ShowGGPromptWin()
+    {
+        GGText.text = "WIN!";
+        GGPromptUI.GetComponent<GGPrompt>().GGPromptDisplay();
+        isShowingPrompt = true;
+        ExitButton.onClick.AddListener(QuitGame);
+    }
+
     public void RotateTile()
     {
         crossedRotatableTile.SwitchDirection();
@@ -108,5 +140,10 @@ public class Dice : MonoBehaviour
     {
         isShowingPrompt = false;
         hasCrossedRotatable = false;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
 
     public void Possess()
     {
+        GameObject.FindObjectOfType<Dice>().playerPossessed();
         isPossessed = true;
     }
 
